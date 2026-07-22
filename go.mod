@@ -1,8 +1,8 @@
 module github.com/guidewire/netwait
 
-go 1.23.0
+go 1.26
 
-toolchain go1.24.1
+toolchain go1.26.1
 
 require (
 	github.com/avast/retry-go/v4 v4.6.0
