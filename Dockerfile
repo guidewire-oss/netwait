@@ -1,4 +1,4 @@
-FROM library/golang:1.24-alpine AS build
+FROM library/golang:1.26-alpine AS build
 
 WORKDIR /build
 
@@ -10,7 +10,7 @@ COPY . .
 ARG version=unspecified
 RUN go build -v -ldflags "-X 'github.com/guidewire/netwait/cmd.version=$version'"
 
-FROM library/alpine:3.17
+FROM library/alpine:3.24
 
 WORKDIR /app
 ENV PATH=$PATH:/app
