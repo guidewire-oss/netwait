@@ -10,16 +10,16 @@ jobs:
     name: Build binaries
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
     - name: Docker Metadata action
       id: meta
-      uses: docker/metadata-action@v5
+      uses: docker/metadata-action@v6
       with:
         images: fake
 
     - name: Set up Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v7
       with:
         go-version-file: go.mod
 
@@ -35,7 +35,7 @@ jobs:
         -ldflags "-X 'github.com/guidewire/netwait/cmd.version=${{ steps.meta.outputs.version }}'"
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: netwait
         path: build/
